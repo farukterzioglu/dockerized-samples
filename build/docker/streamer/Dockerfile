@@ -24,4 +24,4 @@ RUN dotnet publish -c Release -o /app
 FROM microsoft/dotnet:2.1-runtime AS runtime
 WORKDIR /app
 COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "ReviewPurchaseVerifier.Consumer.dll"]
+ENTRYPOINT ["dotnet", "streamer.dll"]
