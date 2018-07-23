@@ -1,4 +1,4 @@
-#BUILD
+﻿#BUILD
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /
 
@@ -13,9 +13,12 @@ RUN dotnet build -c Release -o /app
 
 #RUN TESTS
 FROM build as testrunner
-WORKDIR /test/streamer.Tests
-#RUN dotnet test #activate if you want to fail the build process
-ENTRYPOINT ["dotnet", "test", "--logger:trx"]
+#Tek test projei varsa bu olabilir -> 
+#WORKDIR /test/streamer.Tests
+#ENTRYPOINT ["dotnet", "test", "--logger:trx"]
+#Birden fazla test projesi varsa bu olmalı
+WORKDIR /
+ENTRYPOINT ["./build/unittest/streamerTestCommands.sh"]
 
 #PUBLISH
 FROM build AS publish

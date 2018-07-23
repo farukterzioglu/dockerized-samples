@@ -13,9 +13,8 @@ RUN dotnet build -c Release -o /app
 
 #RUN TESTS
 FROM build as testrunner
-WORKDIR /test/engineApp.Tests
-#RUN dotnet test #activate if you want to fail the build process
-ENTRYPOINT ["dotnet", "test", "--logger:trx"]
+WORKDIR /
+ENTRYPOINT ["./build/unittest/engineAppTestCommands.sh"]
 
 #PUBLISH
 FROM build AS publish
