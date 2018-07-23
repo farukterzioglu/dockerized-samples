@@ -14,6 +14,7 @@ RUN dotnet build -c Release -o /app
 #RUN TESTS
 FROM build as testrunner
 WORKDIR /
+RUN dotnet build
 ENTRYPOINT ["./build/unittest/engineAppTestCommands.sh"]
 
 #PUBLISH
