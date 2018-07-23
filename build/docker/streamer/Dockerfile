@@ -18,6 +18,7 @@ FROM build as testrunner
 #ENTRYPOINT ["dotnet", "test", "--logger:trx"]
 #Birden fazla test projesi varsa bu olmalı
 WORKDIR /
+RUN dotnet build
 ENTRYPOINT ["./build/unittest/streamerTestCommands.sh"]
 
 #PUBLISH
