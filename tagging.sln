@@ -29,6 +29,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "streamer", "streamer", "{FF
 		build\docker\streamer\Dockerfile = build\docker\streamer\Dockerfile
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unittest", "unittest", "{58D3DAA0-968B-4CB1-9E7A-6959942A4ACE}"
+	ProjectSection(SolutionItems) = preProject
+		build\unittest\engineAppTestCommands.sh = build\unittest\engineAppTestCommands.sh
+		build\unittest\streamerTestCommands.sh = build\unittest\streamerTestCommands.sh
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "core.Tests", "test\core.Tests\core.Tests.csproj", "{AD89DF57-D75E-499B-AB42-A46A8851F61A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +107,18 @@ Global
 		{CBADDEC3-A42C-4BB0-96A2-1EB7EB4BAFEC}.Release|x64.Build.0 = Release|Any CPU
 		{CBADDEC3-A42C-4BB0-96A2-1EB7EB4BAFEC}.Release|x86.ActiveCfg = Release|Any CPU
 		{CBADDEC3-A42C-4BB0-96A2-1EB7EB4BAFEC}.Release|x86.Build.0 = Release|Any CPU
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A}.Debug|x64.Build.0 = Debug|Any CPU
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A}.Debug|x86.Build.0 = Debug|Any CPU
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A}.Release|x64.ActiveCfg = Release|Any CPU
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A}.Release|x64.Build.0 = Release|Any CPU
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A}.Release|x86.ActiveCfg = Release|Any CPU
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -109,6 +129,8 @@ Global
 		{3A52233C-B00C-4589-A1DA-F0215BBD957A} = {55F97952-2BB1-4069-AD3E-DFBCF9E5F1D7}
 		{689DC347-B079-4E99-B17D-60040D673A69} = {3A52233C-B00C-4589-A1DA-F0215BBD957A}
 		{FF56CB56-4FEB-4769-92CB-87CC3F905701} = {3A52233C-B00C-4589-A1DA-F0215BBD957A}
+		{58D3DAA0-968B-4CB1-9E7A-6959942A4ACE} = {55F97952-2BB1-4069-AD3E-DFBCF9E5F1D7}
+		{AD89DF57-D75E-499B-AB42-A46A8851F61A} = {30630239-2431-4ACE-90A4-2DFD73FFB08F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {50CA29F4-9931-47E3-95E1-5ABBCC8E434D}
