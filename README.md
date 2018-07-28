@@ -29,3 +29,4 @@ docker run --rm -it core:package
 //Test result outout ???
 docker run --rm -v C:\Logs\Streamer\TestResults:/app/test/TestResults streamer:test
 docker run --rm -v "$(pwd)"/Logs/Streamer/TestResults:/app/test/TestResults dotnetapp:test
+
