@@ -39,3 +39,27 @@ cd out
 dotnet consoleAppNetCore.ConsoleApp.dll
 exit
 ```
+
+STEP-2.3
+```
+cd .\src\consoleAppNetCore
+
+// Run and check the outputs
+docker build -t dockerizesample .
+
+// Run the same command again
+// Check the outputs and note that cache has been used for multiple steps
+docker build -t dockerizesample .  
+
+// Add new package 
+cd .\consoleAppNetCore.ConsoleApp\
+dotnet add package Newtonsoft.Json
+
+// Run the same command above again and check the outputs
+// note that cache hasn't been used after 'COPY' command 
+// because .csproj file changed when we add new package  
+docker build -t dockerizesample .
+
+// Run the same comand above see cache has been used
+docker build -t dockerizesample .
+```
