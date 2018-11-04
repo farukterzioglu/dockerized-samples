@@ -22,3 +22,20 @@ pwd // See the current directory
 dotnet // See available options 
 exit // Exit the image 
 ```
+
+STEP-2.2
+```
+cd .\src\consoleAppNetCore
+docker build -t dockerizesample .
+docker images dockerizesample // Copy image id
+docker run -i -t --entrypoint /bin/bash [imageID] // Run bash inside image 
+
+// Run commands from step-1 inside image
+ls
+cd consoleAppNetCore.ConsoleApp/
+dotnet restore
+dotnet publish -c Release -o ./out
+cd out
+dotnet consoleAppNetCore.ConsoleApp.dll
+exit
+```
