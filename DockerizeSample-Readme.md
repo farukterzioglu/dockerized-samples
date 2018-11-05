@@ -81,3 +81,13 @@ docker build -t dockerizesample .
 // Uncomment the codes inside Dockerfile and run above steps again.
 // Packages will not be restored when the code changes, because of layer caching.
 ```
+
+STEP-3
+```
+cd .\src\consoleAppNetCore
+docker build -t dockerizesample .
+docker run -it --rm --name dockerize_sample dockerizesample
+```
+```
+Hello World!
+```
