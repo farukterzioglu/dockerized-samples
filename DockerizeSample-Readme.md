@@ -63,3 +63,21 @@ docker build -t dockerizesample .
 // Run the same comand above see cache has been used
 docker build -t dockerizesample .
 ```
+
+STEP-2.4
+```
+// Check Dockerfile. 'dotnet restore' command is commented to see effects
+cd .\src\consoleAppNetCore
+docker build -t dockerizesample .
+
+// Run the same command again to see cache has been used
+docker build -t dockerizesample . 
+
+// Change something in code: Hello World -> Hello \n World
+
+// Run the below command again and note that packages restored again even the .csproj file didn't changed
+docker build -t dockerizesample . 
+
+// Uncomment the codes inside Dockerfile and run above steps again.
+// Packages will not be restored when the code changes, because of layer caching.
+```
