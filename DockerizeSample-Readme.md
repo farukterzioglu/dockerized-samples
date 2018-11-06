@@ -1,10 +1,10 @@
 STEP-1
 ```
-cd .\src\consoleAppNetCore\consoleAppNetCore.ConsoleApp
+cd .\src\consoleAppNetCore\ConsoleApp
 dotnet restore
 dotnet publish -c Release -o ./out
 cd out
-dotnet consoleAppNetCore.ConsoleApp.dll
+dotnet ConsoleApp.dll
 ```
 ```
 Hello World!
@@ -26,17 +26,16 @@ exit // Exit the image
 STEP-2.2
 ```
 cd .\src\consoleAppNetCore
-docker build -t dockerizesample .
-docker images dockerizesample // Copy image id
+docker build -t dockerizesample:build --target build .
+docker images dockerizesample:build // Copy image id
 docker run -i -t --entrypoint /bin/bash [imageID] // Run bash inside image 
 
 // Run commands from step-1 inside image
 ls
-cd consoleAppNetCore.ConsoleApp/
 dotnet restore
 dotnet publish -c Release -o ./out
 cd out
-dotnet consoleAppNetCore.ConsoleApp.dll
+dotnet ConsoleApp.dll
 exit
 ```
 
@@ -90,4 +89,16 @@ docker run -it --rm --name dockerize_sample dockerizesample
 ```
 ```
 Hello World!
+```
+
+
+STEP-4
+```
+cd .\src\consoleAppNetCore
+docker build -t dockerizesample:test --target testrunner  .
+docker run -it --rm  dockerizesample:test
+```
+```
+Total tests: 1. Passed: 1. Failed: 0. Skipped: 0.
+Test Run Successful.
 ```
