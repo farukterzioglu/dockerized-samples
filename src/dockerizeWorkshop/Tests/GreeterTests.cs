@@ -1,8 +1,7 @@
-using System;
-using consoleAppNetCore.ConsoleApp;
+using ConsoleApp;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace consoleAppNetCore.Tests
+namespace Tests
 {
     [TestClass]
     public class GreeterTests

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace consoleAppNetCore.ConsoleApp
+namespace ConsoleApp
 {
     public class Greeter
     {

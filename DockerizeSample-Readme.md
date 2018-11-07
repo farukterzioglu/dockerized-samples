@@ -1,6 +1,6 @@
 STEP-1
 ```
-cd .\src\consoleAppNetCore\ConsoleApp
+cd .\src\dockerizeWorkshop\ConsoleApp
 dotnet restore
 dotnet publish -c Release -o ./out
 cd out
@@ -12,7 +12,7 @@ Hello World!
 
 STEP-2.1
 ```
-cd .\src\consoleAppNetCore
+cd .\src\dockerizeWorkshop
 docker build -t dockerizesample .
 docker images dockerizesample // Copy image id
 docker run -i -t --entrypoint /bin/bash [imageID] // Run bash inside image 
@@ -25,7 +25,7 @@ exit // Exit the image
 
 STEP-2.2
 ```
-cd .\src\consoleAppNetCore
+cd .\src\dockerizeWorkshop
 docker build -t dockerizesample:build --target build .
 docker images dockerizesample:build // Copy image id
 docker run -i -t --entrypoint /bin/bash [imageID] // Run bash inside image 
@@ -41,7 +41,7 @@ exit
 
 STEP-2.3
 ```
-cd .\src\consoleAppNetCore
+cd .\src\dockerizeWorkshop
 
 // Run and check the outputs
 docker build -t dockerizesample .
@@ -51,7 +51,7 @@ docker build -t dockerizesample .
 docker build -t dockerizesample .  
 
 // Add new package 
-cd .\consoleAppNetCore.ConsoleApp\
+cd .\dockerizeWorkshop.ConsoleApp\
 dotnet add package Newtonsoft.Json
 
 // Run the same command above again and check the outputs
@@ -66,7 +66,7 @@ docker build -t dockerizesample .
 STEP-2.4
 ```
 // Check Dockerfile. 'dotnet restore' command is commented to see effects
-cd .\src\consoleAppNetCore
+cd .\src\dockerizeWorkshop
 docker build -t dockerizesample .
 
 // Run the same command again to see cache has been used
@@ -83,7 +83,7 @@ docker build -t dockerizesample .
 
 STEP-3
 ```
-cd .\src\consoleAppNetCore
+cd .\src\dockerizeWorkshop
 docker build -t dockerizesample .
 docker run -it --rm --name dockerize_sample dockerizesample
 ```
@@ -94,7 +94,7 @@ Hello World!
 
 STEP-4
 ```
-cd .\src\consoleAppNetCore
+cd .\src\dockerizeWorkshop
 docker build -t dockerizesample:test --target testrunner  .
 docker run -it --rm  dockerizesample:test
 ```
@@ -105,10 +105,10 @@ Test Run Successful.
 
 STEP-5
 ```
-cd .\src\consoleAppNetCore\WebApp
+cd .\src\dockerizeWorkshop\WebApp
 dotnet restore
 dotnet publish -c Release -o ./publish
-cd wwwroot
+cd publish
 dotnet WebApp.dll
 
 curl http://localhost:5000/api/values
