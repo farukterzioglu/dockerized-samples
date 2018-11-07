@@ -102,3 +102,20 @@ docker run -it --rm  dockerizesample:test
 Total tests: 1. Passed: 1. Failed: 0. Skipped: 0.
 Test Run Successful.
 ```
+
+STEP-5
+```
+cd .\src\consoleAppNetCore\WebApp
+dotnet restore
+dotnet publish -c Release -o ./publish
+cd wwwroot
+dotnet WebApp.dll
+
+curl http://localhost:5000/api/values
+```
+```
+...
+RawContent        : ...
+                    ["value1","value2"]
+...
+```
