@@ -138,3 +138,13 @@ curl http://localhost:8000/api/values
 ```
 Content           : ["value1","value2"]
 ```
+
+STEP-7
+```
+docker run -e ASPNETCORE_ENVIRONMENT=test -it --rm -p 8000:80 webapp
+
+// Output:
+...
+Hosting environment: test
+...
+```
