@@ -1,0 +1,15 @@
+FROM microsoft/dotnet:2.1.302-sdk AS build
+WORKDIR /app
+COPY WebApp/*.csproj ./WebApp/
+WORKDIR /app/WebApp
+RUN dotnet restore
+
+WORKDIR /app
+COPY WebApp/. ./WebApp/
+WORKDIR /app/WebApp
+RUN dotnet publish -c Release -o ./out
+
+FROM microsoft/dotnet:2.1-aspnetcore-runtime AS runtime
+WORKDIR /app
+COPY --from=build /app/WebApp/out ./
+ENTRYPOINT ["dotnet", "WebApp.dll"]

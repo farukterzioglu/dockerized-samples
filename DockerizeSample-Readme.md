@@ -115,7 +115,26 @@ curl http://localhost:5000/api/values
 ```
 ```
 ...
-RawContent        : ...
-                    ["value1","value2"]
+Content           : ["value1","value2"]
 ...
+```
+
+STEP-6
+```
+cd .\src\dockerizeWorkshop
+docker build -f .\DockerfileWebApp -t webapp .
+docker images webapp // Copy image id
+docker run -i -t --entrypoint /bin/bash [imageID]  
+
+// Run inside of image
+ls
+dotnet WebApp.dll
+exit
+
+// Run outside of image
+docker run -it --rm -p 8000:80 webapp
+curl http://localhost:8000/api/values
+```
+```
+Content           : ["value1","value2"]
 ```
