@@ -1,4 +1,6 @@
-﻿//ENGINEAPP  
+[Step by step .Net Core Application with Docker](DockerizeSample-Readme.md)  
+  
+//ENGINEAPP  
 //engineapp uygulamasının release & test build i  
 docker build -f .\build\engineApp\Dockerfile -t engineapp:latest .  
 docker build -f .\build\engineApp\Dockerfile -t engineapp:test --target testrunner  .  
