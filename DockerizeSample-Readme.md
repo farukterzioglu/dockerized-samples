@@ -148,3 +148,12 @@ docker run -e ASPNETCORE_ENVIRONMENT=test -it --rm -p 8000:80 webapp
 Hosting environment: test
 ...
 ```
+
+STEP-8
+```
+// Check 'testCommands.sh'
+// Check 'DockerfileWebApp' (ENTRYPOINT ["./testCommands.sh"])
+
+docker build -f .\DockerfileWebApp -t webapp:test --target testrunner .
+docker run -it --rm  webapp:test
+```
